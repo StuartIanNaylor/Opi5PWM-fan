@@ -75,3 +75,14 @@ stuart@stuart-desktop:~$ ./log-temp
 22:26:20 Temp:55461 Fan speed:68%
 22:30:20 Temp:55461 Fan speed:68%
 ```
+The armour shell for the pi5 as it comes is near useless but after some mods it never throttles @ 100% load tested for well over 30 minutes as it does inch up slowly.
+
+Personally get one of the 3 pin fans from pi hut so its software controller and stops on shutdown and in idle is not needed.
+https://thepihut.com/products/software-controllable-5v-30mm-fan-for-raspberry-pi
+
+The fan as it comes is constricted as it lies flat on the metal base and has no space to blow through.
+The screws supplied means you can use some m3 bolts as spacers to give an air gap.
+Then the next thing as thermal pads are not as soft as you think and the pcb is very thin I think it warps slightly and in the middle at the cpu its worse.
+Get a 3mm thermal pad and place between the backplate and CPU as well as applying oppisite pressure the backplate also cools.
+
+After that you get a pretty might compact armor case cooler that is software controlled.
