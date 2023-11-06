@@ -13,6 +13,7 @@ Will create a service and install...
 ./log-temp shows temp and fan speed 
 
 `chmod a+x ./fan-speed ./log-temp`
+
 Cool down
 ```
 stuart@stuart-desktop:~$ ./log-temp
