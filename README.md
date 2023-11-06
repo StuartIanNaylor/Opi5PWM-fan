@@ -7,6 +7,7 @@ Assuming milliseconds prob isn't best but seems to work well.
 
 ./fan-speed after making the above change to /boot/firmware/ubuntuEnv.txt
 You should have PWM output on pin8 which is close to a 5v& gnd, often where fans are powered.
+Fan speed should be run as root for service.
 
 Will create a service and install...
 
