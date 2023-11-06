@@ -1,0 +1,36 @@
+#!/bin/bash
+
+#echo /sys/devices/virtual/thermal/thermal_zone0/temp
+#Intialise PWM
+#echo 0 > /sys/class/pwm/pwmchip2/export
+#set freq to 25Khz 
+echo 25000000 > /sys/class/pwm/pwmchip2/pwm0/period
+#set max off to 75%
+maxoff=18750000
+echo $maxoff > /sys/class/pwm/pwmchip2/pwm0/duty_cycle
+#enable
+echo 1 > /sys/class/pwm/pwmchip2/pwm0/enable
+
+#min temp / max temp & temp range
+mint=35000
+maxt=70000
+ranget=$((maxt-mint))
+
+while :
+do
+    sleep 1
+    temp=$(cat /sys/devices/virtual/thermal/thermal_zone0/temp)
+    echo Temp-$temp
+    targett=$((temp-mint))
+    echo TargetT-$targett
+    ratios=$((targett * 100 / ranget))
+    echo RatioS-$ratios
+    if [[ $ratios -gt 0 ]]
+        then
+            offperiod=$(((maxoff * (100-$ratios))/100))
+            echo Offperiod-$offperiod
+            echo $offperiod > /sys/class/pwm/pwmchip2/pwm0/duty_cycle
+        else
+            echo 25000000 > /sys/class/pwm/pwmchip2/pwm0/duty_cycle
+    fi
+done
