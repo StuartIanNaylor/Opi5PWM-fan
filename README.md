@@ -11,3 +11,5 @@ You should have PWM output on pin8 which is close to a 5v& gnd, often where fans
 Will create a service and install...
 
 ./log-temp shows temp and fan speed 
+
+chmod a+x ./fan-speed ./log-temp
