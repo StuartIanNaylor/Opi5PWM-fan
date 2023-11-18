@@ -5,8 +5,8 @@ echo /sys/devices/virtual/thermal/thermal_zone0/temp
 echo 0 > /sys/class/pwm/pwmchip2/export
 #set freq to 25Khz 
 echo 40000 > /sys/class/pwm/pwmchip2/pwm0/period
-#set max off to 75%
-maxoff=30000
+#set max off to 80%
+maxoff=32000
 echo $maxoff > /sys/class/pwm/pwmchip2/pwm0/duty_cycle
 #enable
 echo 1 > /sys/class/pwm/pwmchip2/pwm0/enable
