@@ -2,7 +2,7 @@
 Rockchip pwm output on pin 8
 `overlays=rk3588-pwm15-m2`
 
-Only thing if anyone can concur is the 25000000 period 25kHz? :)
+Only thing if anyone can concur is the 40000 period 25kHz? :)
 Assuming milliseconds prob isn't best but seems to work well.
 
 ./fan-speed after making the above change to /boot/firmware/ubuntuEnv.txt
